@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:wght@400;800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* body {
+    background-color: #A31D1D;
+    color: #F8F2DE;
+} */
+
+header nav {
+    background-color: #D84040;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    color: #F8F2DE;
+    /* height: 6vw; */
+}
+
+nav h1 {
+    font-size: 2rem;
+    letter-spacing: 1;
+    text-transform: uppercase;
+}
+
+nav form {
+    display: flex;
+    justify-content: center;
+}
+
+.searchBox {
+    /* flex-grow: 1; */
+    margin-right: 10px;
+}
+
+.searchBox,
+button {
+    border: none;
+    font-size: 1.8rem;
+    padding: 10px;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #A31D1D;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+input::placeholder {
+    color: #A31D1D;
+}
+
+button:hover {
+    background-color:#A31D1D;
+    color:#F8F2DE;
+    /* font-weight: bold; */
+}
+
+@media screen and (max-width:600px) {
+    header nav {
+        flex-direction: column;
+    }
+
+    nav form {
+        width: 80%;
+        margin-top: 20px;
+    }
+}
+/* main section */
+.recipe-container{
+    text-align: center;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 40px;
+    width: 80%;
+    margin: 10px auto;
+    padding: 20px;
+    place-items: center;
+}
+.recipe{
+    background-color: #D84040;
+    color: #F8F2DE;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    /* box-shadow: 0 5px 10px rgba(78,73,73,0.1) 0 -5px -5px 10px rgba(34,34,34,0.5); */
+    box-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.4),
+    4px 4px 8px rgba(0, 0, 0, 0.3),
+    6px 6px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    max-width: 400px;
+}
+.recipe:hover{
+      /* Make the shadow more pronounced and move the box slightly */
+  box-shadow:
+  4px 4px 8px rgba(0, 0, 0, 0.5),
+  8px 8px 16px rgba(0, 0, 0, 0.4),
+  12px 12px 24px rgba(0, 0, 0, 0.3);
+transform: translate(-2px, -2px);
+}
+.recipe img{
+    height: 300px;
+}
+.recipe h3{
+    font-size: 1.5rem;
+    margin-block:5px ;
+}
+.recipe p{
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 5px 0px;
+}
+.recipe span{
+    font-weight: 600;
+}
+.recipe button{
+    font-size: 1.2rem;
+    font-weight: 600;   
+    padding: 10px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin: 18px auto;
+    border: none;
+}
+.recipe-detail{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    background-color: #F8F2DE;
+    color: #A31D1D;
+    border-radius: 0.5rem;
+    width: 40%;
+    height: 60%;
+    font-size: 1.2rem;
+    transition: all 0.5s ease-in-out;
+    overflow-y: scroll;
+}
+/* adding scroll bar */
+.recipe-detail::-webkit-scrollbar{
+    width: 10px;
+
+}
+.recipe-detail::-webkit-scrollbar-thumb{
+    background: #A31D1D;
+    border-radius: 16px;
+    --webkit-border-radius:16px;
+}
+/* body scrollbar */
+body::-webkit-scrollbar{
+    width: 16px;
+
+}
+body::-webkit-scrollbar-thumb{
+    background:grey;
+}
+
+body::-webkit-scrollbar-track{
+    background: #000;
+}
+.recipe-detail-content{
+    padding: 30px;
+}
+.recipeName {
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+.ingredientList li{
+    margin-top: 10px;
+    margin-left: 20px;
+
+}
+.recipeName,.ingredientList,.recipeInstruction{
+    margin-bottom: 20px;
+}
+.recipeInstruction p{
+    line-height: 30px;
+    white-space: pre-line;
+}
+.recipe-closeBtn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
